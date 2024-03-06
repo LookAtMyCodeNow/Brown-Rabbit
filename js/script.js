@@ -8,7 +8,7 @@ glass.addEventListener("click", function () {
 
 // End Function to rotate reading glass icon
 
-// Data with images and text
+////////   Data Base
 const data = [
   {
     imageUrl: `assets/images/posts/Post thumbnail-1.png`,
@@ -116,6 +116,7 @@ const data = [
       " Lorem ipsum dolor sit amet consectetur adipisicing elit Eligendi consectetur ea ipsam dolores! Laboriosam eveniet qui vel minus inventore id esse commodi unde quidem culpa a, quo dicta ad dolores deserunt quisquam necessitatibus,incidunt assumenda voluptatibus atque nobis earum odit...",
   },
 ];
+////////   End Data Base
 
 $(document).ready(function () {
   // Items per page
@@ -127,7 +128,7 @@ $(document).ready(function () {
   // Initial page
   let currentPage = 1;
 
-  // Function to display data for the current page
+  ///////  Function to display data for the current page and change pages  ////////
   function displayData() {
     const start = (currentPage - 1) * itemsPerPage;
     const end = start + itemsPerPage;
@@ -176,6 +177,7 @@ $(document).ready(function () {
     prevButton();
     nextButton();
   }
+  ///////  END Function to display data for the current page and change pages  ////////
 
   // Function to show prev page.
   function prevButton() {
@@ -195,7 +197,7 @@ $(document).ready(function () {
     });
   }
 
-  // Function to show next Page
+  // Function to show next page
   function nextButton() {
     const nextButton = $("#nextButton");
 
@@ -215,3 +217,71 @@ $(document).ready(function () {
 
   displayData();
 });
+
+/////////// Funcionality to Search Throw Website. //////////////
+
+// Variables to tooggle search results.
+let isOpened1 = false;
+let isOpened2 = false;
+
+// Function-1 to display search input on small device
+function search() {
+  const resultsContainer = document.getElementById("searchResults");
+
+  // Clear previous results
+  resultsContainer.innerHTML = "";
+
+  // Parts of articles I want to be shown up.
+  const filteredData = data.slice(0, 3);
+
+  resultsContainer.style.display =
+    resultsContainer.style.display === "none" ? "inline-block" : "none";
+
+  // Display search results dynamically
+  if (!isOpened1)
+    filteredData.forEach((item) => {
+      const li = document.createElement("li");
+
+      li.innerHTML = `<strong class="h4 fw-bolder">${
+        item.header
+      }</strong> <p class="mt-1 mb-0  fw-lighter"><small>${
+        item.textPublished
+      }</small></p> <p class="mt-1  fw-lighter"><small>${
+        item.textInfo.slice(0, 77) + "..."
+      }</small></p> <hr></hr>`;
+      resultsContainer.appendChild(li);
+    });
+
+  isOpened1 = !isOpened1;
+}
+
+// Function-2 to display search input on big device
+function search2() {
+  const resultsContainer = document.getElementById("searchResults2");
+
+  // Clear previous results
+  resultsContainer.innerHTML = "";
+
+  // Parts of articles I want to be shown up.
+  const filteredData = data.slice(0, 3);
+
+  resultsContainer.style.display =
+    resultsContainer.style.display === "none" ? "inline-block" : "none";
+
+  // Display search results dynamically
+  if (!isOpened2)
+    filteredData.forEach((item) => {
+      const li = document.createElement("li");
+
+      li.innerHTML = `<strong class="h4 fw-bolder">${
+        item.header
+      }</strong> <p class="mt-1 mb-0  fw-lighter"><small>${
+        item.textPublished
+      }</small></p> <p class="mt-1  fw-lighter"><small>${
+        item.textInfo.slice(0, 77) + "..."
+      }</small></p> <hr></hr>`;
+      resultsContainer.appendChild(li);
+    });
+
+  isOpened2 = !isOpened2;
+}
