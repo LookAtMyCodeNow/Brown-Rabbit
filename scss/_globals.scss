@@ -48,6 +48,92 @@
   height: 1.1875rem;
 }
 
+// Rotate readging glass on click
+.rotate {
+  transform: rotate(45deg);
+  transition: transform 0.3 ease-in-out;
+}
+
+// Carousel
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 40px;
+  height: 40px;
+  color: white;
+  fill: white;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  bottom: 8.5rem;
+}
+
+@media (min-width: 576px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    bottom: 11.5rem;
+  }
+}
+
+.carousel-caption {
+  transform: translateY(-40%);
+  bottom: unset;
+  left: unset;
+  right: unset;
+  min-height: 200px;
+}
+
+.text-caption,
+.carousel-caption {
+  min-height: 200px;
+}
+
+@media (min-width: 992px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    justify-content: end;
+    top: unset;
+    opacity: 1;
+    width: 40px;
+    bottom: -3rem;
+  }
+
+  .carousel-caption {
+    transform: translateY(-50%);
+  }
+
+  .carousel-control-prev {
+    right: 3vw;
+    left: unset;
+    background-image: none;
+    background-repeat: no-repeat;
+  }
+
+  .carousel-control-prev-icon {
+    background-image: url("../assets/icons/arrow-left.svg");
+  }
+
+  .carousel-control-next-icon {
+    background-image: url("../assets/icons/arrow-right.svg");
+  }
+
+  .carousel-inner {
+    height: 60vh;
+  }
+}
+
+@media (min-width: 1360px) {
+  .carousel-control-prev {
+    right: 50px;
+  }
+}
+
+@media (max-width: 992px) {
+  .carousel-caption {
+    left: 9%;
+  }
+}
+
 .hero,
 .carousel-inner,
 .carousel-item {
@@ -100,8 +186,4 @@
     height: unset;
   }
 }
-
-.rotate {
-  transform: rotate(45deg);
-  transition: transform 0.3 ease-in-out;
-}
+// End Carousel
