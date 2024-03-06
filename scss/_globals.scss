@@ -1,5 +1,26 @@
-// Navbar
+//  Form controls && Line-bottom on hover
+.form-control::placeholder {
+  color: $primary;
+}
 
+.translate-y {
+  transform: translateY(4px);
+}
+
+.line-bottom:after {
+  display: block;
+  content: "";
+  border-bottom: solid 1px $primary;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  transform-origin: 0% 50%;
+  transition-delay: 100ms;
+}
+.line-bottom:hover:after {
+  transform: scaleX(1);
+}
+
+// Navbar
 .container-navbar {
   margin-top: 1.2rem;
 }
