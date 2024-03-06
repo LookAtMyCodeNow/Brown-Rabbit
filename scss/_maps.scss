@@ -1,0 +1,81 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
+
+// Custom Typography
+$font-size-base: 1rem;
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2.1875;
+$h3-font-size: $font-size-base * 1.875;
+$h4-font-size: $font-size-base * 1.5625;
+$h6-font-size: $font-size-base * 1.125;
+
+// Viewport-height
+$utilities: map-merge(
+  $utilities,
+  (
+    "viewport-height":
+      map-merge(
+        map-get($utilities, "viewport-height"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "viewport-height"), "values"),
+              (
+                18: 18vh,
+                20: 20vh,
+                25: 25vh,
+                30: 30vh,
+                50: 50vh,
+                58: 58vh,
+                65: 65vh,
+                75: 75vh,
+              )
+            ),
+        )
+      ),
+  )
+);
+
+// Max-height
+$utilities: map-merge(
+  $utilities,
+  (
+    "max-height":
+      map-merge(
+        map-get($utilities, "max-height"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "max-height"), "values"),
+              (
+                25: 25vh,
+              )
+            ),
+        )
+      ),
+  )
+);
+
+// % width
+$utilities: map-merge(
+  $utilities,
+  (
+    "width":
+      map-merge(
+        map-get($utilities, "width"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "width"), "values"),
+              (
+                60: 60%,
+              )
+            ),
+        )
+      ),
+  )
+);

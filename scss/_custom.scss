@@ -33,3 +33,12 @@ $container-max-widths: (
   xl: 1140px,
   xxl: 1800px,
 );
+
+// Navbar
+$navbar-light-icon-color: $primary;
+$navbar-light-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-icon-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4  23h22'/></svg>");
+
+// Off Canvas
+$offcanvas-vertical-height: 20% !important;
+$offcanvas-horizontal-width: 100vw;
+$offcanvas-bg-color: silver;
