@@ -189,7 +189,6 @@ $(document).ready(function () {
       if (currentPage < 1) {
         currentPage = totalPages;
       }
-      console.log(currentPage);
 
       setTimeout(() => {
         displayData();
@@ -207,7 +206,6 @@ $(document).ready(function () {
       if (currentPage > totalPages) {
         currentPage = 1;
       }
-      console.log(currentPage);
 
       setTimeout(() => {
         displayData();
