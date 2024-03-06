@@ -230,3 +230,34 @@
   }
 }
 // End Modal Pop Up
+
+//////////    Info Section   /////////////////
+
+@media (max-width: 577px) {
+  .info {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .card-image {
+    max-height: 350px;
+  }
+  .bolder-sm-screen {
+    font-weight: bolder;
+  }
+}
+
+@media (max-width: 500px) {
+  .card-image {
+    max-height: 250px;
+  }
+}
+
+//////////    End Info Section    ///////////////
+
+/////////     Sponsor Section     ///////////////
+.display-lg-contents {
+  display: contents;
+}
+///////       End Sponsor Section   /////////////
