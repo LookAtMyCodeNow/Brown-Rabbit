@@ -187,3 +187,46 @@
   }
 }
 // End Carousel
+
+//  Modal Pop Up
+
+.modal {
+  backdrop-filter: blur(20px);
+  transition: unset;
+  transform: unset;
+  padding-bottom: 9rem;
+}
+
+@media (min-width: 992px) {
+  .modal-dialog {
+    max-width: 60%;
+  }
+}
+
+.modal-content {
+  top: 110vh;
+  max-height: 110% !important;
+  overflow: visible !important;
+}
+
+.modal-body {
+  padding: 65px;
+  overflow: visible !important;
+}
+
+.image-modal {
+  height: 100%;
+}
+
+.modal.show .modal-dialog {
+  transition: transform 0.25s ease-out;
+  transition-delay: 0.3s;
+  transform: translate(0, calc(-110vh + 110px));
+}
+
+@media (min-width: 1920px) {
+  .modal-dialog {
+    max-width: 1200px;
+  }
+}
+// End Modal Pop Up
